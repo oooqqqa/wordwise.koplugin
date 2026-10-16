@@ -146,9 +146,10 @@ end
 -- strings aren't in KOReader's catalog (see wordwise_l10n.lua), so we translate
 -- them ourselves: look up the key for the current language, fall back to the
 -- English source (en_GB), and substitute any extra args into %1, %2, ... .
+-- The current language is gettext's current_lang: KOReader sets it from the
+-- "language" setting, or from the Android system locale when that is unset.
 function WordWise:tr(key, ...)
-    local lang = G_reader_settings:readSetting("language")
-    local t = lang and WordWiseL10N[lang]
+    local t = WordWiseL10N[_.current_lang]
     local s = (t and t[key]) or (WordWiseL10N.en_GB and WordWiseL10N.en_GB[key]) or key
     if select("#", ...) > 0 then return T(s, ...) end
     return s

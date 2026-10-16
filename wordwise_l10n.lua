@@ -4,8 +4,8 @@
 -- translation catalog, so they would otherwise always show in English while
 -- every neighbouring UI string (Close, Search, Add to vocabulary builder, ...)
 -- follows the UI language. This table localizes them in every language KOReader
--- ships an l10n/ for; keys are the KOReader language codes (the value of
--- G_reader_settings "language"). English is the source text and lives under
+-- ships an l10n/ for; keys are the KOReader language codes (gettext's
+-- current_lang, e.g. "zh_CN"). English is the source text and lives under
 -- en_GB; WordWise:tr() falls back to it (and then to gettext) for any language
 -- or key that is missing here.
 --
