@@ -12,7 +12,7 @@
 -- The keys, and their English source strings:
 --   know            = "I already know this word"   (mark word known -> hide hint)
 --   show            = "Show Word Wise hint"        (reverse: un-mark a known word)
---   no_db           = "No Word Wise dictionary found.\nPlace a dictionary (*.db) in:\n"
+--   no_db           = "No Word Wise dictionary found.\nPlace wordwise.db in:\n"
 --   toggle          = "Toggle Word Wise hints"     (dispatcher/gesture action title)
 --   show_inline     = "Show inline hints"          (menu toggle)
 --   underline       = "Underline hinted words"     (menu toggle: draw the rule)
@@ -23,12 +23,12 @@
 --   font_size_title = "Hint font size"             (spin-widget title)
 --
 -- "Word Wise" is kept as a Latin product name across scripts, matching how
--- Kindle presents the feature name. "%1" placeholders and the "\n" / "(*.db)"
+-- Kindle presents the feature name. "%1" placeholders and the "\n" / "wordwise.db"
 -- literals must be preserved verbatim in every translation.
 return {
     af_ZA = {
         know = "Ek ken hierdie woord reeds", show = "Wys Word Wise-wenk",
-        no_db = "Geen Word Wise-woordeboek gevind nie.\nPlaas 'n woordeboek (*.db) in:\n",
+        no_db = "Geen Word Wise-woordeboek gevind nie.\nPlaas wordwise.db in:\n",
         toggle = "Wissel Word Wise-wenke",
         show_inline = "Wys inlyn-wenke",
         underline = "Onderstreep woorde met wenke",
@@ -40,7 +40,7 @@ return {
     },
     ar = {
         know = "أعرف هذه الكلمة بالفعل", show = "إظهار تلميح Word Wise",
-        no_db = "لم يُعثر على قاموس Word Wise.\nضع قاموسًا (*.db) في:\n",
+        no_db = "لم يُعثر على قاموس Word Wise.\nضع wordwise.db في:\n",
         toggle = "تبديل تلميحات Word Wise",
         show_inline = "إظهار التلميحات المضمّنة",
         underline = "تسطير الكلمات ذات التلميحات",
@@ -52,7 +52,7 @@ return {
     },
     be = {
         know = "Я ўжо ведаю гэтае слова", show = "Паказаць падказку Word Wise",
-        no_db = "Слоўнік Word Wise не знойдзены.\nЗмясціце слоўнік (*.db) у:\n",
+        no_db = "Слоўнік Word Wise не знойдзены.\nЗмясціце wordwise.db у:\n",
         toggle = "Пераключыць падказкі Word Wise",
         show_inline = "Паказваць падказкі ў тэксце",
         underline = "Падкрэсліваць словы з падказкамі",
@@ -64,7 +64,7 @@ return {
     },
     bg_BG = {
         know = "Вече знам тази дума", show = "Показване на подсказка Word Wise",
-        no_db = "Не е намерен речник Word Wise.\nПоставете речник (*.db) в:\n",
+        no_db = "Не е намерен речник Word Wise.\nПоставете wordwise.db в:\n",
         toggle = "Превключване на подсказките Word Wise",
         show_inline = "Показване на подсказки в текста",
         underline = "Подчертаване на думите с подсказки",
@@ -76,7 +76,7 @@ return {
     },
     bn = {
         know = "আমি এই শব্দটি ইতিমধ্যে জানি", show = "Word Wise ইঙ্গিত দেখান",
-        no_db = "কোনো Word Wise অভিধান পাওয়া যায়নি।\nএখানে একটি অভিধান (*.db) রাখুন:\n",
+        no_db = "কোনো Word Wise অভিধান পাওয়া যায়নি।\nএখানে wordwise.db রাখুন:\n",
         toggle = "Word Wise ইঙ্গিত চালু/বন্ধ করুন",
         show_inline = "ইনলাইন ইঙ্গিত দেখান",
         underline = "ইঙ্গিতযুক্ত শব্দ আন্ডারলাইন করুন",
@@ -88,7 +88,7 @@ return {
     },
     ca = {
         know = "Ja conec aquesta paraula", show = "Mostra el suggeriment de Word Wise",
-        no_db = "No s'ha trobat cap diccionari de Word Wise.\nCol·loqueu un diccionari (*.db) a:\n",
+        no_db = "No s'ha trobat cap diccionari de Word Wise.\nCol·loqueu wordwise.db a:\n",
         toggle = "Activa/desactiva els suggeriments de Word Wise",
         show_inline = "Mostra els suggeriments en línia",
         underline = "Subratlla les paraules amb suggeriments",
@@ -100,7 +100,7 @@ return {
     },
     cs = {
         know = "Toto slovo už znám", show = "Zobrazit nápovědu Word Wise",
-        no_db = "Slovník Word Wise nebyl nalezen.\nUmístěte slovník (*.db) do:\n",
+        no_db = "Slovník Word Wise nebyl nalezen.\nUmístěte wordwise.db do:\n",
         toggle = "Přepnout nápovědy Word Wise",
         show_inline = "Zobrazit nápovědy v textu",
         underline = "Podtrhávat slova s nápovědou",
@@ -112,7 +112,7 @@ return {
     },
     cy = {
         know = "Rwy'n gwybod y gair hwn eisoes", show = "Dangos awgrym Word Wise",
-        no_db = "Ni chanfuwyd geiriadur Word Wise.\nRhowch eiriadur (*.db) yn:\n",
+        no_db = "Ni chanfuwyd geiriadur Word Wise.\nRhowch wordwise.db yn:\n",
         toggle = "Toglo awgrymiadau Word Wise",
         show_inline = "Dangos awgrymiadau mewnlin",
         underline = "Tanlinellu geiriau ag awgrymiadau",
@@ -124,7 +124,7 @@ return {
     },
     da = {
         know = "Jeg kender allerede dette ord", show = "Vis Word Wise-tip",
-        no_db = "Ingen Word Wise-ordbog fundet.\nAnbring en ordbog (*.db) i:\n",
+        no_db = "Ingen Word Wise-ordbog fundet.\nAnbring wordwise.db i:\n",
         toggle = "Slå Word Wise-tips til/fra",
         show_inline = "Vis indlejrede tips",
         underline = "Understreg ord med tips",
@@ -136,7 +136,7 @@ return {
     },
     de = {
         know = "Ich kenne dieses Wort bereits", show = "Word-Wise-Hinweis anzeigen",
-        no_db = "Kein Word-Wise-Wörterbuch gefunden.\nLegen Sie ein Wörterbuch (*.db) ab in:\n",
+        no_db = "Kein Word-Wise-Wörterbuch gefunden.\nLegen Sie wordwise.db ab in:\n",
         toggle = "Word-Wise-Hinweise umschalten",
         show_inline = "Inline-Hinweise anzeigen",
         underline = "Wörter mit Hinweisen unterstreichen",
@@ -148,7 +148,7 @@ return {
     },
     el = {
         know = "Γνωρίζω ήδη αυτή τη λέξη", show = "Εμφάνιση υπόδειξης Word Wise",
-        no_db = "Δεν βρέθηκε λεξικό Word Wise.\nΤοποθετήστε ένα λεξικό (*.db) στο:\n",
+        no_db = "Δεν βρέθηκε λεξικό Word Wise.\nΤοποθετήστε το wordwise.db στο:\n",
         toggle = "Εναλλαγή υποδείξεων Word Wise",
         show_inline = "Εμφάνιση ενσωματωμένων υποδείξεων",
         underline = "Υπογράμμιση λέξεων με υποδείξεις",
@@ -160,7 +160,7 @@ return {
     },
     en_GB = {
         know = "I already know this word", show = "Show Word Wise hint",
-        no_db = "No Word Wise dictionary found.\nPlace a dictionary (*.db) in:\n",
+        no_db = "No Word Wise dictionary found.\nPlace wordwise.db in:\n",
         toggle = "Toggle Word Wise hints",
         show_inline = "Show inline hints",
         underline = "Underline hinted words",
@@ -172,7 +172,7 @@ return {
     },
     eo = {
         know = "Mi jam konas ĉi tiun vorton", show = "Montri Word Wise-sugeston",
-        no_db = "Neniu vortaro Word Wise trovita.\nMetu vortaron (*.db) en:\n",
+        no_db = "Neniu vortaro Word Wise trovita.\nMetu wordwise.db en:\n",
         toggle = "Baskuligi la sugestojn de Word Wise",
         show_inline = "Montri enliniajn sugestojn",
         underline = "Substreki vortojn kun sugestoj",
@@ -184,7 +184,7 @@ return {
     },
     es = {
         know = "Ya conozco esta palabra", show = "Mostrar sugerencia de Word Wise",
-        no_db = "No se encontró ningún diccionario de Word Wise.\nColoca un diccionario (*.db) en:\n",
+        no_db = "No se encontró ningún diccionario de Word Wise.\nColoca wordwise.db en:\n",
         toggle = "Activar o desactivar las sugerencias de Word Wise",
         show_inline = "Mostrar sugerencias en línea",
         underline = "Subrayar las palabras con sugerencias",
@@ -196,7 +196,7 @@ return {
     },
     et = {
         know = "Ma juba tean seda sõna", show = "Kuva Word Wise'i vihje",
-        no_db = "Word Wise'i sõnastikku ei leitud.\nAseta sõnastik (*.db) kausta:\n",
+        no_db = "Word Wise'i sõnastikku ei leitud.\nAseta wordwise.db kausta:\n",
         toggle = "Lülita Word Wise'i vihjed sisse/välja",
         show_inline = "Kuva reasisesed vihjed",
         underline = "Jooni alla vihjetega sõnad",
@@ -208,7 +208,7 @@ return {
     },
     eu = {
         know = "Hitz hau dagoeneko ezagutzen dut", show = "Erakutsi Word Wise aholkua",
-        no_db = "Ez da Word Wise hiztegirik aurkitu.\nJarri hiztegi bat (*.db) hemen:\n",
+        no_db = "Ez da Word Wise hiztegirik aurkitu.\nJarri wordwise.db hemen:\n",
         toggle = "Txandakatu Word Wise aholkuak",
         show_inline = "Erakutsi lerro barneko aholkuak",
         underline = "Azpimarratu aholkua duten hitzak",
@@ -220,7 +220,7 @@ return {
     },
     fa = {
         know = "من این کلمه را از قبل می‌دانم", show = "نمایش راهنمای Word Wise",
-        no_db = "واژه‌نامهٔ Word Wise یافت نشد.\nیک واژه‌نامه (*.db) را در این مسیر قرار دهید:\n",
+        no_db = "واژه‌نامهٔ Word Wise یافت نشد.\nwordwise.db را در این مسیر قرار دهید:\n",
         toggle = "تغییر وضعیت راهنماهای Word Wise",
         show_inline = "نمایش راهنماهای درون‌خطی",
         underline = "زیرخط‌دار کردن واژه‌های دارای راهنما",
@@ -232,7 +232,7 @@ return {
     },
     fi = {
         know = "Tiedän tämän sanan jo", show = "Näytä Word Wise -vihje",
-        no_db = "Word Wise -sanakirjaa ei löytynyt.\nSijoita sanakirja (*.db) kansioon:\n",
+        no_db = "Word Wise -sanakirjaa ei löytynyt.\nSijoita wordwise.db kansioon:\n",
         toggle = "Näytä tai piilota Word Wise -vihjeet",
         show_inline = "Näytä tekstinsisäiset vihjeet",
         underline = "Alleviivaa vihjeelliset sanat",
@@ -244,7 +244,7 @@ return {
     },
     fr = {
         know = "Je connais déjà ce mot", show = "Afficher l'astuce Word Wise",
-        no_db = "Aucun dictionnaire Word Wise trouvé.\nPlacez un dictionnaire (*.db) dans :\n",
+        no_db = "Aucun dictionnaire Word Wise trouvé.\nPlacez wordwise.db dans :\n",
         toggle = "Activer ou désactiver les astuces Word Wise",
         show_inline = "Afficher les astuces en ligne",
         underline = "Souligner les mots avec astuce",
@@ -256,7 +256,7 @@ return {
     },
     ga = {
         know = "Tá an focal seo ar eolas agam cheana", show = "Taispeáin leid Word Wise",
-        no_db = "Níor aimsíodh foclóir Word Wise.\nCuir foclóir (*.db) i:\n",
+        no_db = "Níor aimsíodh foclóir Word Wise.\nCuir wordwise.db i:\n",
         toggle = "Scoránaigh leideanna Word Wise",
         show_inline = "Taispeáin leideanna inlíne",
         underline = "Cuir líne faoi fhocail a bhfuil leideanna acu",
@@ -268,7 +268,7 @@ return {
     },
     gl = {
         know = "Xa coñezo esta palabra", show = "Mostrar suxestión de Word Wise",
-        no_db = "Non se atopou ningún dicionario de Word Wise.\nColoca un dicionario (*.db) en:\n",
+        no_db = "Non se atopou ningún dicionario de Word Wise.\nColoca wordwise.db en:\n",
         toggle = "Activar ou desactivar as suxestións de Word Wise",
         show_inline = "Mostrar suxestións en liña",
         underline = "Subliñar as palabras con suxestións",
@@ -280,7 +280,7 @@ return {
     },
     he = {
         know = "אני כבר יודע את המילה הזאת", show = "הצג רמז של Word Wise",
-        no_db = "לא נמצא מילון Word Wise.\nהנח מילון (*.db) בתיקייה:\n",
+        no_db = "לא נמצא מילון Word Wise.\nהנח את wordwise.db בתיקייה:\n",
         toggle = "החלף רמזי Word Wise",
         show_inline = "הצג רמזים מוטבעים",
         underline = "קו תחתון למילים עם רמז",
@@ -292,7 +292,7 @@ return {
     },
     hi = {
         know = "मुझे यह शब्द पहले से पता है", show = "Word Wise संकेत दिखाएँ",
-        no_db = "कोई Word Wise शब्दकोश नहीं मिला।\nएक शब्दकोश (*.db) यहाँ रखें:\n",
+        no_db = "कोई Word Wise शब्दकोश नहीं मिला।\nwordwise.db यहाँ रखें:\n",
         toggle = "Word Wise संकेत चालू/बंद करें",
         show_inline = "इनलाइन संकेत दिखाएँ",
         underline = "संकेत वाले शब्दों को रेखांकित करें",
@@ -304,7 +304,7 @@ return {
     },
     hr = {
         know = "Već znam ovu riječ", show = "Prikaži Word Wise savjet",
-        no_db = "Word Wise rječnik nije pronađen.\nStavite rječnik (*.db) u:\n",
+        no_db = "Word Wise rječnik nije pronađen.\nStavite wordwise.db u:\n",
         toggle = "Uključi/isključi Word Wise savjete",
         show_inline = "Prikaži savjete u tekstu",
         underline = "Podcrtaj riječi sa savjetima",
@@ -316,7 +316,7 @@ return {
     },
     hu = {
         know = "Már ismerem ezt a szót", show = "Word Wise tipp megjelenítése",
-        no_db = "Nem található Word Wise szótár.\nHelyezzen el egy szótárat (*.db) itt:\n",
+        no_db = "Nem található Word Wise szótár.\nHelyezze el a wordwise.db fájlt itt:\n",
         toggle = "Word Wise tippek be- és kikapcsolása",
         show_inline = "Sorközi tippek megjelenítése",
         underline = "Tippel ellátott szavak aláhúzása",
@@ -328,7 +328,7 @@ return {
     },
     ia = {
         know = "Io ja cognosce iste parola", show = "Monstrar le suggestion Word Wise",
-        no_db = "Nulle dictionario Word Wise trovate.\nPone un dictionario (*.db) in:\n",
+        no_db = "Nulle dictionario Word Wise trovate.\nPone wordwise.db in:\n",
         toggle = "Alternar le suggestiones de Word Wise",
         show_inline = "Monstrar suggestiones in linea",
         underline = "Sublinear le parolas con suggestiones",
@@ -340,7 +340,7 @@ return {
     },
     id = {
         know = "Saya sudah tahu kata ini", show = "Tampilkan petunjuk Word Wise",
-        no_db = "Kamus Word Wise tidak ditemukan.\nTempatkan kamus (*.db) di:\n",
+        no_db = "Kamus Word Wise tidak ditemukan.\nTempatkan wordwise.db di:\n",
         toggle = "Alihkan petunjuk Word Wise",
         show_inline = "Tampilkan petunjuk sebaris",
         underline = "Garis bawahi kata berpetunjuk",
@@ -352,7 +352,7 @@ return {
     },
     ie = {
         know = "Yo ja conosse ti parol", show = "Monstrar li indicie Word Wise",
-        no_db = "Null dictionarium Word Wise trovat.\nPosi un dictionarium (*.db) in:\n",
+        no_db = "Null dictionarium Word Wise trovat.\nPosi wordwise.db in:\n",
         toggle = "Comutar li indicies de Word Wise",
         show_inline = "Monstrar indicies in linea",
         underline = "Sublinear paroles con indicies",
@@ -364,7 +364,7 @@ return {
     },
     it_IT = {
         know = "Conosco già questa parola", show = "Mostra suggerimento Word Wise",
-        no_db = "Nessun dizionario Word Wise trovato.\nInserisci un dizionario (*.db) in:\n",
+        no_db = "Nessun dizionario Word Wise trovato.\nInserisci wordwise.db in:\n",
         toggle = "Attiva/disattiva i suggerimenti Word Wise",
         show_inline = "Mostra suggerimenti in linea",
         underline = "Sottolinea le parole con suggerimento",
@@ -376,7 +376,7 @@ return {
     },
     ja = {
         know = "この単語はもう知っています", show = "Word Wise のヒントを表示",
-        no_db = "Word Wise 辞書が見つかりません。\n辞書 (*.db) を次の場所に配置してください：\n",
+        no_db = "Word Wise 辞書が見つかりません。\nwordwise.db を次の場所に配置してください：\n",
         toggle = "Word Wise のヒントを切り替え",
         show_inline = "インラインヒントを表示",
         underline = "ヒントのある単語に下線を引く",
@@ -388,7 +388,7 @@ return {
     },
     ka = {
         know = "ამ სიტყვას უკვე ვიცნობ", show = "Word Wise-ის მინიშნების ჩვენება",
-        no_db = "Word Wise ლექსიკონი ვერ მოიძებნა.\nმოათავსეთ ლექსიკონი (*.db) აქ:\n",
+        no_db = "Word Wise ლექსიკონი ვერ მოიძებნა.\nმოათავსეთ wordwise.db აქ:\n",
         toggle = "Word Wise მინიშნებების გადართვა",
         show_inline = "ხაზშივე მინიშნებების ჩვენება",
         underline = "მინიშნების მქონე სიტყვების ხაზგასმა",
@@ -400,7 +400,7 @@ return {
     },
     kab = {
         know = "Ssneɣ yakan awal-a", show = "Sken talɣut Word Wise",
-        no_db = "Ulac asegzawal Word Wise yettwafen.\nSers asegzawal (*.db) deg:\n",
+        no_db = "Ulac asegzawal Word Wise yettwafen.\nSers wordwise.db deg:\n",
         toggle = "Rmed/Sens tilɣa Word Wise",
         show_inline = "Sken tilɣa srid",
         underline = "Jerred awalen s tilɣa",
@@ -412,7 +412,7 @@ return {
     },
     kn = {
         know = "ಈ ಪದ ನನಗೆ ಈಗಾಗಲೇ ತಿಳಿದಿದೆ", show = "Word Wise ಸುಳಿವು ತೋರಿಸಿ",
-        no_db = "Word Wise ನಿಘಂಟು ಕಂಡುಬಂದಿಲ್ಲ.\nಒಂದು ನಿಘಂಟನ್ನು (*.db) ಇಲ್ಲಿ ಇರಿಸಿ:\n",
+        no_db = "Word Wise ನಿಘಂಟು ಕಂಡುಬಂದಿಲ್ಲ.\nwordwise.db ಅನ್ನು ಇಲ್ಲಿ ಇರಿಸಿ:\n",
         toggle = "Word Wise ಸುಳಿವುಗಳನ್ನು ಟಾಗಲ್ ಮಾಡಿ",
         show_inline = "ಇನ್‌ಲೈನ್ ಸುಳಿವುಗಳನ್ನು ತೋರಿಸಿ",
         underline = "ಸುಳಿವು ಇರುವ ಪದಗಳನ್ನು ಅಡಿಗೆರೆ ಎಳೆಯಿರಿ",
@@ -424,7 +424,7 @@ return {
     },
     ko_KR = {
         know = "이 단어를 이미 알고 있습니다", show = "Word Wise 힌트 표시",
-        no_db = "Word Wise 사전을 찾을 수 없습니다.\n사전 (*.db) 을 다음 위치에 넣으세요:\n",
+        no_db = "Word Wise 사전을 찾을 수 없습니다.\nwordwise.db 파일을 다음 위치에 넣으세요:\n",
         toggle = "Word Wise 힌트 켜기/끄기",
         show_inline = "인라인 힌트 표시",
         underline = "힌트 있는 단어에 밑줄 표시",
@@ -436,7 +436,7 @@ return {
     },
     lt_LT = {
         know = "Šį žodį jau žinau", show = "Rodyti Word Wise patarimą",
-        no_db = "Word Wise žodynas nerastas.\nĮdėkite žodyną (*.db) į:\n",
+        no_db = "Word Wise žodynas nerastas.\nĮdėkite wordwise.db į:\n",
         toggle = "Įjungti ar išjungti Word Wise patarimus",
         show_inline = "Rodyti patarimus tekste",
         underline = "Pabraukti žodžius su patarimais",
@@ -448,7 +448,7 @@ return {
     },
     lv = {
         know = "Es jau zinu šo vārdu", show = "Rādīt Word Wise padomu",
-        no_db = "Word Wise vārdnīca nav atrasta.\nIevietojiet vārdnīcu (*.db) mapē:\n",
+        no_db = "Word Wise vārdnīca nav atrasta.\nIevietojiet wordwise.db mapē:\n",
         toggle = "Ieslēgt vai izslēgt Word Wise padomus",
         show_inline = "Rādīt padomus tekstā",
         underline = "Pasvītrot vārdus ar padomiem",
@@ -460,7 +460,7 @@ return {
     },
     mk = {
         know = "Веќе го знам овој збор", show = "Прикажи совет Word Wise",
-        no_db = "Не е пронајден речник Word Wise.\nСтавете речник (*.db) во:\n",
+        no_db = "Не е пронајден речник Word Wise.\nСтавете wordwise.db во:\n",
         toggle = "Вклучи/исклучи совети Word Wise",
         show_inline = "Прикажи совети во текстот",
         underline = "Подвлечи ги зборовите со совети",
@@ -472,7 +472,7 @@ return {
     },
     ms = {
         know = "Saya sudah tahu perkataan ini", show = "Tunjukkan petua Word Wise",
-        no_db = "Tiada kamus Word Wise ditemui.\nLetakkan kamus (*.db) di:\n",
+        no_db = "Tiada kamus Word Wise ditemui.\nLetakkan wordwise.db di:\n",
         toggle = "Togol petua Word Wise",
         show_inline = "Tunjukkan petua sebaris",
         underline = "Gariskan perkataan berpetua",
@@ -484,7 +484,7 @@ return {
     },
     nb_NO = {
         know = "Jeg kan allerede dette ordet", show = "Vis Word Wise-hint",
-        no_db = "Fant ingen Word Wise-ordbok.\nPlasser en ordbok (*.db) i:\n",
+        no_db = "Fant ingen Word Wise-ordbok.\nPlasser wordwise.db i:\n",
         toggle = "Slå Word Wise-hint av/på",
         show_inline = "Vis innebygde hint",
         underline = "Understrek ord med hint",
@@ -496,7 +496,7 @@ return {
     },
     nl_NL = {
         know = "Ik ken dit woord al", show = "Word Wise-hint tonen",
-        no_db = "Geen Word Wise-woordenboek gevonden.\nPlaats een woordenboek (*.db) in:\n",
+        no_db = "Geen Word Wise-woordenboek gevonden.\nPlaats wordwise.db in:\n",
         toggle = "Word Wise-hints in-/uitschakelen",
         show_inline = "Inline-hints tonen",
         underline = "Woorden met hints onderstrepen",
@@ -508,7 +508,7 @@ return {
     },
     ["or"] = {
         know = "ମୁଁ ଏହି ଶବ୍ଦ ପୂର୍ବରୁ ଜାଣେ", show = "Word Wise ସୂଚନା ଦେଖାନ୍ତୁ",
-        no_db = "କୌଣସି Word Wise ଅଭିଧାନ ମିଳିଲା ନାହିଁ।\nଏଠାରେ ଏକ ଅଭିଧାନ (*.db) ରଖନ୍ତୁ:\n",
+        no_db = "କୌଣସି Word Wise ଅଭିଧାନ ମିଳିଲା ନାହିଁ।\nଏଠାରେ wordwise.db ରଖନ୍ତୁ:\n",
         toggle = "Word Wise ସୂଚନା ଟୋଗଲ୍ କରନ୍ତୁ",
         show_inline = "ଇନ୍‌ଲାଇନ୍ ସୂଚନା ଦେଖାନ୍ତୁ",
         underline = "ସୂଚନା ଥିବା ଶବ୍ଦଗୁଡ଼ିକୁ ରେଖାଙ୍କିତ କରନ୍ତୁ",
@@ -520,7 +520,7 @@ return {
     },
     pl = {
         know = "Znam już to słowo", show = "Pokaż wskazówkę Word Wise",
-        no_db = "Nie znaleziono słownika Word Wise.\nUmieść słownik (*.db) w:\n",
+        no_db = "Nie znaleziono słownika Word Wise.\nUmieść plik wordwise.db w:\n",
         toggle = "Przełącz wskazówki Word Wise",
         show_inline = "Pokaż wskazówki w tekście",
         underline = "Podkreślaj słowa ze wskazówkami",
@@ -532,7 +532,7 @@ return {
     },
     pt_BR = {
         know = "Já conheço esta palavra", show = "Mostrar dica do Word Wise",
-        no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque um dicionário (*.db) em:\n",
+        no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque wordwise.db em:\n",
         toggle = "Ativar ou desativar as dicas do Word Wise",
         show_inline = "Mostrar dicas embutidas",
         underline = "Sublinhar palavras com dica",
@@ -544,7 +544,7 @@ return {
     },
     pt_PT = {
         know = "Já conheço esta palavra", show = "Mostrar sugestão do Word Wise",
-        no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque um dicionário (*.db) em:\n",
+        no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque wordwise.db em:\n",
         toggle = "Ativar ou desativar as sugestões do Word Wise",
         show_inline = "Mostrar sugestões incorporadas",
         underline = "Sublinhar palavras com sugestão",
@@ -556,7 +556,7 @@ return {
     },
     ro = {
         know = "Știu deja acest cuvânt", show = "Afișează indiciul Word Wise",
-        no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați un dicționar (*.db) în:\n",
+        no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați wordwise.db în:\n",
         toggle = "Activează/dezactivează indiciile Word Wise",
         show_inline = "Afișează indiciile în text",
         underline = "Subliniază cuvintele cu indicii",
@@ -568,7 +568,7 @@ return {
     },
     ro_MD = {
         know = "Știu deja acest cuvânt", show = "Afișează indiciul Word Wise",
-        no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați un dicționar (*.db) în:\n",
+        no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați wordwise.db în:\n",
         toggle = "Activează/dezactivează indiciile Word Wise",
         show_inline = "Afișează indiciile în text",
         underline = "Subliniază cuvintele cu indicii",
@@ -580,7 +580,7 @@ return {
     },
     ru = {
         know = "Я уже знаю это слово", show = "Показать подсказку Word Wise",
-        no_db = "Словарь Word Wise не найден.\nПоместите словарь (*.db) в:\n",
+        no_db = "Словарь Word Wise не найден.\nПоместите wordwise.db в:\n",
         toggle = "Переключить подсказки Word Wise",
         show_inline = "Показывать подсказки в тексте",
         underline = "Подчёркивать слова с подсказками",
@@ -592,7 +592,7 @@ return {
     },
     si = {
         know = "මම මේ වචනය දැනටමත් දනිමි", show = "Word Wise ඉඟිය පෙන්වන්න",
-        no_db = "Word Wise ශබ්දකෝෂයක් හමු නොවීය.\nශබ්දකෝෂයක් (*.db) මෙහි තබන්න:\n",
+        no_db = "Word Wise ශබ්දකෝෂයක් හමු නොවීය.\nwordwise.db මෙහි තබන්න:\n",
         toggle = "Word Wise ඉඟි ටොගල් කරන්න",
         show_inline = "අන්තර්ගත ඉඟි පෙන්වන්න",
         underline = "ඉඟි සහිත වචන යටින් ඉරි අඳින්න",
@@ -604,7 +604,7 @@ return {
     },
     sk = {
         know = "Toto slovo už poznám", show = "Zobraziť pomôcku Word Wise",
-        no_db = "Slovník Word Wise sa nenašiel.\nUmiestnite slovník (*.db) do:\n",
+        no_db = "Slovník Word Wise sa nenašiel.\nUmiestnite wordwise.db do:\n",
         toggle = "Prepnúť pomôcky Word Wise",
         show_inline = "Zobraziť pomôcky v texte",
         underline = "Podčiarknuť slová s pomôckou",
@@ -616,7 +616,7 @@ return {
     },
     sl = {
         know = "To besedo že poznam", show = "Pokaži namig Word Wise",
-        no_db = "Slovarja Word Wise ni mogoče najti.\nSlovar (*.db) namestite v:\n",
+        no_db = "Slovarja Word Wise ni mogoče najti.\nDatoteko wordwise.db namestite v:\n",
         toggle = "Preklopi namige Word Wise",
         show_inline = "Pokaži namige v besedilu",
         underline = "Podčrtaj besede z namigi",
@@ -628,7 +628,7 @@ return {
     },
     sr = {
         know = "Већ знам ову реч", show = "Прикажи Word Wise савет",
-        no_db = "Word Wise речник није пронађен.\nПоставите речник (*.db) у:\n",
+        no_db = "Word Wise речник није пронађен.\nПоставите wordwise.db у:\n",
         toggle = "Укључи/искључи Word Wise савете",
         show_inline = "Прикажи савете у тексту",
         underline = "Подвуци речи са саветима",
@@ -640,7 +640,7 @@ return {
     },
     sv = {
         know = "Jag kan redan det här ordet", show = "Visa Word Wise-tips",
-        no_db = "Ingen Word Wise-ordlista hittades.\nPlacera en ordlista (*.db) i:\n",
+        no_db = "Ingen Word Wise-ordlista hittades.\nPlacera wordwise.db i:\n",
         toggle = "Växla Word Wise-tips",
         show_inline = "Visa infogade tips",
         underline = "Understryk ord med tips",
@@ -652,7 +652,7 @@ return {
     },
     th = {
         know = "ฉันรู้จักคำนี้แล้ว", show = "แสดงคำใบ้ Word Wise",
-        no_db = "ไม่พบพจนานุกรม Word Wise\nวางพจนานุกรม (*.db) ไว้ใน:\n",
+        no_db = "ไม่พบพจนานุกรม Word Wise\nวาง wordwise.db ไว้ใน:\n",
         toggle = "สลับคำใบ้ Word Wise",
         show_inline = "แสดงคำใบ้แบบอินไลน์",
         underline = "ขีดเส้นใต้คำที่มีคำใบ้",
@@ -664,7 +664,7 @@ return {
     },
     tr = {
         know = "Bu kelimeyi zaten biliyorum", show = "Word Wise ipucunu göster",
-        no_db = "Word Wise sözlüğü bulunamadı.\nŞu konuma bir sözlük (*.db) yerleştirin:\n",
+        no_db = "Word Wise sözlüğü bulunamadı.\nwordwise.db dosyasını şu konuma yerleştirin:\n",
         toggle = "Word Wise ipuçlarını aç/kapat",
         show_inline = "Satır içi ipuçlarını göster",
         underline = "İpucu olan kelimelerin altını çiz",
@@ -676,7 +676,7 @@ return {
     },
     uk = {
         know = "Я вже знаю це слово", show = "Показати підказку Word Wise",
-        no_db = "Словник Word Wise не знайдено.\nРозмістіть словник (*.db) у:\n",
+        no_db = "Словник Word Wise не знайдено.\nРозмістіть wordwise.db у:\n",
         toggle = "Перемкнути підказки Word Wise",
         show_inline = "Показувати підказки в тексті",
         underline = "Підкреслювати слова з підказками",
@@ -688,7 +688,7 @@ return {
     },
     ur = {
         know = "میں یہ لفظ پہلے سے جانتا ہوں", show = "Word Wise اشارہ دکھائیں",
-        no_db = "کوئی Word Wise لغت نہیں ملی۔\nایک لغت (*.db) یہاں رکھیں:\n",
+        no_db = "کوئی Word Wise لغت نہیں ملی۔\nwordwise.db یہاں رکھیں:\n",
         toggle = "Word Wise اشارے ٹوگل کریں",
         show_inline = "ان لائن اشارے دکھائیں",
         underline = "اشارے والے الفاظ کو خط کشیدہ کریں",
@@ -700,7 +700,7 @@ return {
     },
     vi = {
         know = "Tôi đã biết từ này", show = "Hiển thị gợi ý Word Wise",
-        no_db = "Không tìm thấy từ điển Word Wise.\nĐặt một từ điển (*.db) vào:\n",
+        no_db = "Không tìm thấy từ điển Word Wise.\nĐặt tệp wordwise.db vào:\n",
         toggle = "Bật/tắt gợi ý Word Wise",
         show_inline = "Hiển thị gợi ý nội tuyến",
         underline = "Gạch chân từ có gợi ý",
@@ -712,7 +712,7 @@ return {
     },
     zh_CN = {
         know = "我已经认识这个词", show = "显示 Word Wise 提示",
-        no_db = "未找到 Word Wise 词典。\n请将词典 (*.db) 放入：\n",
+        no_db = "未找到 Word Wise 词典。\n请将 wordwise.db 放入：\n",
         toggle = "切换 Word Wise 提示",
         show_inline = "显示行内提示",
         underline = "为有提示的词加下划线",
@@ -724,7 +724,7 @@ return {
     },
     zh_TW = {
         know = "我已經認識這個詞", show = "顯示 Word Wise 提示",
-        no_db = "找不到 Word Wise 詞典。\n請將詞典 (*.db) 放入：\n",
+        no_db = "找不到 Word Wise 詞典。\n請將 wordwise.db 放入：\n",
         toggle = "切換 Word Wise 提示",
         show_inline = "顯示行內提示",
         underline = "為有提示的詞加底線",

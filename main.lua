@@ -33,7 +33,9 @@ local WordWiseDB = require("wordwise_db")
 local WordWiseL10N = require("wordwise_l10n")
 
 -- The dictionary lives in exactly one place: wordwise.db beside this file.
-local PLUGIN_ROOT = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("[^/\\]+$", "")
+-- KOReader loads plugins as "<plugins dir>/" .. name, which can leave a "//"
+-- in the path; collapse it so the path shown to the user reads cleanly.
+local PLUGIN_ROOT = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("[^/\\]+$", ""):gsub("//+", "/")
 local DB_PATH = PLUGIN_ROOT .. "wordwise.db"
 
 local MAX_LEVEL = 5                -- hint level 1 (rarest words only) .. 5 (most hints)
@@ -560,7 +562,7 @@ end
 function WordWise:setEnabled(on)
     if on and not self:hasDB() then
         UIManager:show(InfoMessage:new{
-            text = self:tr("no_db") .. DB_PATH,
+            text = self:tr("no_db") .. PLUGIN_ROOT,
         })
         return
     end
@@ -594,7 +596,9 @@ function WordWise:getSubMenu()
         {
             text = self:tr("show_inline"),
             checked_func = function() return self:isEnabled() end,
-            enabled_func = function() return self:isSupportedDocument() and self:hasDB() end,
+            -- Tappable even without a dictionary, so setEnabled can explain
+            -- where wordwise.db is missing instead of a silently greyed item.
+            enabled_func = function() return self:isSupportedDocument() end,
             callback = function() self:setEnabled(not self:isEnabled()) end,
         },
         {
