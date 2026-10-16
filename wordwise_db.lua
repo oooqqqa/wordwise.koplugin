@@ -1,10 +1,8 @@
 -- Word Wise data layer.
 --
 -- The plugin is dictionary-agnostic: it reads a single canonical SQLite schema
--- and does not care how the database was produced. Ship nothing; the user
--- supplies a database at <data>/wordwise/ (see build_wordwise_db.py, which can
--- derive one from a Kindle WordWise.kll dictionary for personal use, or any
--- other source rebuilt into the same shape).
+-- and does not care how the database was produced. The database is always
+-- wordwise.db inside the plugin folder (main.lua decides the path).
 --
 -- Canonical schema:
 --   entries(word TEXT PRIMARY KEY COLLATE NOCASE,

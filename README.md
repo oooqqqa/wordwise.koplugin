@@ -13,11 +13,8 @@ a high one also glosses more common ones.
    [latest release](https://github.com/asxelot/wordwise.koplugin/releases/latest)
    and unzip it. It expands to a correctly-named `wordwise.koplugin/` folder
    (dictionary bundled) — ready to copy, no renaming needed.
-2. Copy the `wordwise.koplugin` folder into KOReader's `plugins/` directory:
-   - Kindle: `/mnt/us/koreader/plugins/`
-   - Kobo: `/mnt/onboard/.adds/koreader/plugins/`
-   - Android: `koreader/plugins/`
-   - Desktop / emulator: `<koreader>/plugins/`
+2. Copy the `wordwise.koplugin` folder into KOReader's `koreader/plugins/`
+   directory on your Android device.
 3. Restart KOReader.
 
 <details>
@@ -42,29 +39,11 @@ words), so it works out of the box — no setup. The bundled dictionary contains
 no proprietary content and is freely redistributable (see *How the bundled
 dictionary is built* below).
 
-### Bring your own (optional)
+### Where the dictionary lives
 
-Any database you drop into KOReader's data directory **overrides** the bundled
-one, so you can supply a better/personal dictionary without deleting anything:
-
-```
-<koreader data dir>/wordwise/wordwise.db
-```
-
-(Any `*.db` in `wordwise/` is used; `wordwise.db` is preferred if present.)
-
-### Running on a Kindle? It's auto-detected
-
-If no override is present and the plugin finds Kindle's own Word Wise corpus
-on disk (`/mnt/us/system/kll/kll.en.en.klld` — populated once Word Wise has
-been used at least once), it converts that into `wordwise/wordwise.db`
-automatically on first run (`wordwise_kindle.lua`) and uses it from then on.
-This is Amazon/Merriam-Webster content read from *your own device*; the
-conversion happens on-device and the result is never bundled/distributed —
-same personal-use terms as the standalone conversion below.
-
-Resolution order: `wordwise/wordwise.db` → first `*.db` in `wordwise/` →
-auto-converted Kindle corpus (device only) → bundled.
+There is exactly one location: `wordwise.db` inside the plugin folder
+(`koreader/plugins/wordwise.koplugin/wordwise.db`). To use a different
+dictionary, replace that file.
 
 ### Canonical schema
 
@@ -109,12 +88,5 @@ python3 build_open_dict.py candidates > candidates.tsv
 
 ### Alternative sources
 
-- **Kindle Word Wise (personal use).** If you're running the plugin on a
-  (jailbroken) Kindle itself, this happens automatically — see *Running on a
-  Kindle?* above. To convert a copy pulled off your own device for use
-  elsewhere (e.g. testing in the emulator), use `tools/build_wordwise_db.py`
-  on `kll.en.en.klld` (or the older `WordWise.kll.en.en.db`) and drop the
-  result in `wordwise/`. This is Amazon/Merriam-Webster licensed content — for
-  personal use only; **do not redistribute it.**
 - **Wiktionary (CC BY-SA)** via the [Proficiency](https://github.com/xxyzz/Proficiency)
   `en_en` data, reshaped into the canonical schema.

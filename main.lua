@@ -17,7 +17,6 @@ How it works:
 --]]--
 
 local Blitbuffer = require("ffi/blitbuffer")
-local DataStorage = require("datastorage")
 local Dispatcher = require("dispatcher")
 local Event = require("ui/event")
 local Font = require("ui/font")
@@ -31,18 +30,11 @@ local _ = require("gettext")
 local T = require("ffi/util").template
 
 local WordWiseDB = require("wordwise_db")
-local WordWiseKindle = require("wordwise_kindle")
 local WordWiseL10N = require("wordwise_l10n")
 
--- The plugin ships a built-in open dictionary (bundled beside this file), but a
--- user-supplied canonical-schema database dropped into WW_DIR overrides it — so
--- you can swap in your own (e.g. a personal Kindle-derived DB) without deleting
--- anything. Resolution order: WW_DIR/wordwise.db, first *.db in WW_DIR, bundled.
-local WW_DIR = DataStorage:getDataDir() .. "/wordwise"
-
--- Directory this plugin was loaded from, used to find the bundled dictionary.
+-- The dictionary lives in exactly one place: wordwise.db beside this file.
 local PLUGIN_ROOT = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("[^/\\]+$", "")
-local BUNDLED_DB = PLUGIN_ROOT .. "wordwise.db"
+local DB_PATH = PLUGIN_ROOT .. "wordwise.db"
 
 local MAX_LEVEL = 5                -- hint level 1 (rarest words only) .. 5 (most hints)
 local DEFAULT_LEVEL = 3           -- middle of the slider, like Kindle's default
@@ -79,66 +71,15 @@ function WordWise:getShowUnderline()
     return G_reader_settings:nilOrTrue("wordwise_show_underline")
 end
 
--- Resolve the dictionary path: a user DB in WW_DIR (wordwise.db, else the first
--- *.db found there) overrides the dictionary bundled with the plugin. If none
--- is present but this is a Kindle with its own Word Wise corpus on disk, that
--- is converted once into WW_DIR/wordwise.db and used from then on (personal
--- use only -- see wordwise_kindle.lua). Cached (nil = not yet resolved, false
--- = none).
-function WordWise:getDBPath()
-    if self._db_path ~= nil then
-        return self._db_path or nil
-    end
-    self._db_path = false
-    if lfs.attributes(WW_DIR, "mode") == "directory" then
-        local preferred = WW_DIR .. "/wordwise.db"
-        if lfs.attributes(preferred, "mode") == "file" then
-            self._db_path = preferred
-            return preferred
-        end
-        for name in lfs.dir(WW_DIR) do
-            if name:match("%.db$") then
-                self._db_path = WW_DIR .. "/" .. name
-                return self._db_path
-            end
-        end
-    end
-    if WordWiseKindle.available() then
-        if lfs.attributes(WW_DIR, "mode") ~= "directory" then
-            lfs.mkdir(WW_DIR)
-        end
-        -- One-time conversion; on slow device storage this can take a while,
-        -- so show something rather than leave the UI looking hung.
-        local info = InfoMessage:new{
-            text = self:tr("building"),
-        }
-        UIManager:show(info)
-        UIManager:forceRePaint()
-        local converted = WW_DIR .. "/wordwise.db"
-        local ok = WordWiseKindle.convert(WordWiseKindle.KLLD_PATH, converted, BUNDLED_DB)
-        UIManager:close(info)
-        if ok then
-            self._db_path = converted
-            return converted
-        end
-    end
-    if lfs.attributes(BUNDLED_DB, "mode") == "file" then
-        self._db_path = BUNDLED_DB
-        return BUNDLED_DB
-    end
-    return nil
-end
-
 function WordWise:getDB()
     if self.db == nil then
-        local path = self:getDBPath()
-        self.db = (path and WordWiseDB.open(path)) or false
+        self.db = (self:hasDB() and WordWiseDB.open(DB_PATH)) or false
     end
     return self.db or nil
 end
 
 function WordWise:hasDB()
-    return self:getDBPath() ~= nil
+    return lfs.attributes(DB_PATH, "mode") == "file"
 end
 
 -- Enabled state is per-book (stored in the book's sidecar), so each book
@@ -618,7 +559,7 @@ end
 function WordWise:setEnabled(on)
     if on and not self:hasDB() then
         UIManager:show(InfoMessage:new{
-            text = self:tr("no_db") .. WW_DIR,
+            text = self:tr("no_db") .. DB_PATH,
         })
         return
     end

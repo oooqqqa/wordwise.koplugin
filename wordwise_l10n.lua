@@ -12,7 +12,6 @@
 -- The keys, and their English source strings:
 --   know            = "I already know this word"   (mark word known -> hide hint)
 --   show            = "Show Word Wise hint"        (reverse: un-mark a known word)
---   building        = "Building Word Wise dictionary from this Kindle's data (one-time)…"
 --   no_db           = "No Word Wise dictionary found.\nPlace a dictionary (*.db) in:\n"
 --   toggle          = "Toggle Word Wise hints"     (dispatcher/gesture action title)
 --   show_inline     = "Show inline hints"          (menu toggle)
@@ -29,7 +28,6 @@
 return {
     af_ZA = {
         know = "Ek ken hierdie woord reeds", show = "Wys Word Wise-wenk",
-        building = "Word Wise-woordeboek word uit hierdie Kindle se data gebou (eenmalig)…",
         no_db = "Geen Word Wise-woordeboek gevind nie.\nPlaas 'n woordeboek (*.db) in:\n",
         toggle = "Wissel Word Wise-wenke",
         show_inline = "Wys inlyn-wenke",
@@ -42,7 +40,6 @@ return {
     },
     ar = {
         know = "أعرف هذه الكلمة بالفعل", show = "إظهار تلميح Word Wise",
-        building = "جارٍ إنشاء قاموس Word Wise من بيانات هذا الـ Kindle (لمرة واحدة)…",
         no_db = "لم يُعثر على قاموس Word Wise.\nضع قاموسًا (*.db) في:\n",
         toggle = "تبديل تلميحات Word Wise",
         show_inline = "إظهار التلميحات المضمّنة",
@@ -55,7 +52,6 @@ return {
     },
     be = {
         know = "Я ўжо ведаю гэтае слова", show = "Паказаць падказку Word Wise",
-        building = "Стварэнне слоўніка Word Wise з даных гэтага Kindle (аднаразова)…",
         no_db = "Слоўнік Word Wise не знойдзены.\nЗмясціце слоўнік (*.db) у:\n",
         toggle = "Пераключыць падказкі Word Wise",
         show_inline = "Паказваць падказкі ў тэксце",
@@ -68,7 +64,6 @@ return {
     },
     bg_BG = {
         know = "Вече знам тази дума", show = "Показване на подсказка Word Wise",
-        building = "Създаване на речник Word Wise от данните на този Kindle (еднократно)…",
         no_db = "Не е намерен речник Word Wise.\nПоставете речник (*.db) в:\n",
         toggle = "Превключване на подсказките Word Wise",
         show_inline = "Показване на подсказки в текста",
@@ -81,7 +76,6 @@ return {
     },
     bn = {
         know = "আমি এই শব্দটি ইতিমধ্যে জানি", show = "Word Wise ইঙ্গিত দেখান",
-        building = "এই Kindle-এর ডেটা থেকে Word Wise অভিধান তৈরি করা হচ্ছে (একবারই)…",
         no_db = "কোনো Word Wise অভিধান পাওয়া যায়নি।\nএখানে একটি অভিধান (*.db) রাখুন:\n",
         toggle = "Word Wise ইঙ্গিত চালু/বন্ধ করুন",
         show_inline = "ইনলাইন ইঙ্গিত দেখান",
@@ -94,7 +88,6 @@ return {
     },
     ca = {
         know = "Ja conec aquesta paraula", show = "Mostra el suggeriment de Word Wise",
-        building = "Construint el diccionari de Word Wise amb les dades d'aquest Kindle (només una vegada)…",
         no_db = "No s'ha trobat cap diccionari de Word Wise.\nCol·loqueu un diccionari (*.db) a:\n",
         toggle = "Activa/desactiva els suggeriments de Word Wise",
         show_inline = "Mostra els suggeriments en línia",
@@ -107,7 +100,6 @@ return {
     },
     cs = {
         know = "Toto slovo už znám", show = "Zobrazit nápovědu Word Wise",
-        building = "Vytváření slovníku Word Wise z dat tohoto Kindlu (jednorázově)…",
         no_db = "Slovník Word Wise nebyl nalezen.\nUmístěte slovník (*.db) do:\n",
         toggle = "Přepnout nápovědy Word Wise",
         show_inline = "Zobrazit nápovědy v textu",
@@ -120,7 +112,6 @@ return {
     },
     cy = {
         know = "Rwy'n gwybod y gair hwn eisoes", show = "Dangos awgrym Word Wise",
-        building = "Wrthi'n adeiladu geiriadur Word Wise o ddata'r Kindle hwn (unwaith yn unig)…",
         no_db = "Ni chanfuwyd geiriadur Word Wise.\nRhowch eiriadur (*.db) yn:\n",
         toggle = "Toglo awgrymiadau Word Wise",
         show_inline = "Dangos awgrymiadau mewnlin",
@@ -133,7 +124,6 @@ return {
     },
     da = {
         know = "Jeg kender allerede dette ord", show = "Vis Word Wise-tip",
-        building = "Word Wise-ordbog bygges ud fra denne Kindles data (engangs)…",
         no_db = "Ingen Word Wise-ordbog fundet.\nAnbring en ordbog (*.db) i:\n",
         toggle = "Slå Word Wise-tips til/fra",
         show_inline = "Vis indlejrede tips",
@@ -146,7 +136,6 @@ return {
     },
     de = {
         know = "Ich kenne dieses Wort bereits", show = "Word-Wise-Hinweis anzeigen",
-        building = "Word-Wise-Wörterbuch wird aus den Daten dieses Kindle erstellt (einmalig)…",
         no_db = "Kein Word-Wise-Wörterbuch gefunden.\nLegen Sie ein Wörterbuch (*.db) ab in:\n",
         toggle = "Word-Wise-Hinweise umschalten",
         show_inline = "Inline-Hinweise anzeigen",
@@ -159,7 +148,6 @@ return {
     },
     el = {
         know = "Γνωρίζω ήδη αυτή τη λέξη", show = "Εμφάνιση υπόδειξης Word Wise",
-        building = "Δημιουργία του λεξικού Word Wise από τα δεδομένα αυτού του Kindle (εφάπαξ)…",
         no_db = "Δεν βρέθηκε λεξικό Word Wise.\nΤοποθετήστε ένα λεξικό (*.db) στο:\n",
         toggle = "Εναλλαγή υποδείξεων Word Wise",
         show_inline = "Εμφάνιση ενσωματωμένων υποδείξεων",
@@ -172,7 +160,6 @@ return {
     },
     en_GB = {
         know = "I already know this word", show = "Show Word Wise hint",
-        building = "Building Word Wise dictionary from this Kindle's data (one-time)…",
         no_db = "No Word Wise dictionary found.\nPlace a dictionary (*.db) in:\n",
         toggle = "Toggle Word Wise hints",
         show_inline = "Show inline hints",
@@ -185,7 +172,6 @@ return {
     },
     eo = {
         know = "Mi jam konas ĉi tiun vorton", show = "Montri Word Wise-sugeston",
-        building = "Konstruado de la vortaro Word Wise el la datumoj de ĉi tiu Kindle (unufoje)…",
         no_db = "Neniu vortaro Word Wise trovita.\nMetu vortaron (*.db) en:\n",
         toggle = "Baskuligi la sugestojn de Word Wise",
         show_inline = "Montri enliniajn sugestojn",
@@ -198,7 +184,6 @@ return {
     },
     es = {
         know = "Ya conozco esta palabra", show = "Mostrar sugerencia de Word Wise",
-        building = "Creando el diccionario de Word Wise con los datos de este Kindle (solo una vez)…",
         no_db = "No se encontró ningún diccionario de Word Wise.\nColoca un diccionario (*.db) en:\n",
         toggle = "Activar o desactivar las sugerencias de Word Wise",
         show_inline = "Mostrar sugerencias en línea",
@@ -211,7 +196,6 @@ return {
     },
     et = {
         know = "Ma juba tean seda sõna", show = "Kuva Word Wise'i vihje",
-        building = "Word Wise'i sõnastiku koostamine selle Kindle'i andmetest (ühekordne)…",
         no_db = "Word Wise'i sõnastikku ei leitud.\nAseta sõnastik (*.db) kausta:\n",
         toggle = "Lülita Word Wise'i vihjed sisse/välja",
         show_inline = "Kuva reasisesed vihjed",
@@ -224,7 +208,6 @@ return {
     },
     eu = {
         know = "Hitz hau dagoeneko ezagutzen dut", show = "Erakutsi Word Wise aholkua",
-        building = "Word Wise hiztegia Kindle honen datuetatik eraikitzen (behin bakarrik)…",
         no_db = "Ez da Word Wise hiztegirik aurkitu.\nJarri hiztegi bat (*.db) hemen:\n",
         toggle = "Txandakatu Word Wise aholkuak",
         show_inline = "Erakutsi lerro barneko aholkuak",
@@ -237,7 +220,6 @@ return {
     },
     fa = {
         know = "من این کلمه را از قبل می‌دانم", show = "نمایش راهنمای Word Wise",
-        building = "در حال ساخت واژه‌نامهٔ Word Wise از داده‌های این Kindle (فقط یک‌بار)…",
         no_db = "واژه‌نامهٔ Word Wise یافت نشد.\nیک واژه‌نامه (*.db) را در این مسیر قرار دهید:\n",
         toggle = "تغییر وضعیت راهنماهای Word Wise",
         show_inline = "نمایش راهنماهای درون‌خطی",
@@ -250,7 +232,6 @@ return {
     },
     fi = {
         know = "Tiedän tämän sanan jo", show = "Näytä Word Wise -vihje",
-        building = "Rakennetaan Word Wise -sanakirjaa tämän Kindlen tiedoista (kertaluonteinen)…",
         no_db = "Word Wise -sanakirjaa ei löytynyt.\nSijoita sanakirja (*.db) kansioon:\n",
         toggle = "Näytä tai piilota Word Wise -vihjeet",
         show_inline = "Näytä tekstinsisäiset vihjeet",
@@ -263,7 +244,6 @@ return {
     },
     fr = {
         know = "Je connais déjà ce mot", show = "Afficher l'astuce Word Wise",
-        building = "Création du dictionnaire Word Wise à partir des données de ce Kindle (une seule fois)…",
         no_db = "Aucun dictionnaire Word Wise trouvé.\nPlacez un dictionnaire (*.db) dans :\n",
         toggle = "Activer ou désactiver les astuces Word Wise",
         show_inline = "Afficher les astuces en ligne",
@@ -276,7 +256,6 @@ return {
     },
     ga = {
         know = "Tá an focal seo ar eolas agam cheana", show = "Taispeáin leid Word Wise",
-        building = "Foclóir Word Wise á thógáil ó shonraí an Kindle seo (uair amháin)…",
         no_db = "Níor aimsíodh foclóir Word Wise.\nCuir foclóir (*.db) i:\n",
         toggle = "Scoránaigh leideanna Word Wise",
         show_inline = "Taispeáin leideanna inlíne",
@@ -289,7 +268,6 @@ return {
     },
     gl = {
         know = "Xa coñezo esta palabra", show = "Mostrar suxestión de Word Wise",
-        building = "Creando o dicionario de Word Wise cos datos deste Kindle (só unha vez)…",
         no_db = "Non se atopou ningún dicionario de Word Wise.\nColoca un dicionario (*.db) en:\n",
         toggle = "Activar ou desactivar as suxestións de Word Wise",
         show_inline = "Mostrar suxestións en liña",
@@ -302,7 +280,6 @@ return {
     },
     he = {
         know = "אני כבר יודע את המילה הזאת", show = "הצג רמז של Word Wise",
-        building = "בונה את מילון Word Wise מנתוני ה-Kindle הזה (חד-פעמי)…",
         no_db = "לא נמצא מילון Word Wise.\nהנח מילון (*.db) בתיקייה:\n",
         toggle = "החלף רמזי Word Wise",
         show_inline = "הצג רמזים מוטבעים",
@@ -315,7 +292,6 @@ return {
     },
     hi = {
         know = "मुझे यह शब्द पहले से पता है", show = "Word Wise संकेत दिखाएँ",
-        building = "इस Kindle के डेटा से Word Wise शब्दकोश बनाया जा रहा है (एक बार)…",
         no_db = "कोई Word Wise शब्दकोश नहीं मिला।\nएक शब्दकोश (*.db) यहाँ रखें:\n",
         toggle = "Word Wise संकेत चालू/बंद करें",
         show_inline = "इनलाइन संकेत दिखाएँ",
@@ -328,7 +304,6 @@ return {
     },
     hr = {
         know = "Već znam ovu riječ", show = "Prikaži Word Wise savjet",
-        building = "Izrada Word Wise rječnika iz podataka ovog Kindlea (jednokratno)…",
         no_db = "Word Wise rječnik nije pronađen.\nStavite rječnik (*.db) u:\n",
         toggle = "Uključi/isključi Word Wise savjete",
         show_inline = "Prikaži savjete u tekstu",
@@ -341,7 +316,6 @@ return {
     },
     hu = {
         know = "Már ismerem ezt a szót", show = "Word Wise tipp megjelenítése",
-        building = "A Word Wise szótár építése ennek a Kindle-nek az adataiból (egyszeri)…",
         no_db = "Nem található Word Wise szótár.\nHelyezzen el egy szótárat (*.db) itt:\n",
         toggle = "Word Wise tippek be- és kikapcsolása",
         show_inline = "Sorközi tippek megjelenítése",
@@ -354,7 +328,6 @@ return {
     },
     ia = {
         know = "Io ja cognosce iste parola", show = "Monstrar le suggestion Word Wise",
-        building = "Construction del dictionario Word Wise a partir del datos de iste Kindle (un sol vice)…",
         no_db = "Nulle dictionario Word Wise trovate.\nPone un dictionario (*.db) in:\n",
         toggle = "Alternar le suggestiones de Word Wise",
         show_inline = "Monstrar suggestiones in linea",
@@ -367,7 +340,6 @@ return {
     },
     id = {
         know = "Saya sudah tahu kata ini", show = "Tampilkan petunjuk Word Wise",
-        building = "Membangun kamus Word Wise dari data Kindle ini (sekali saja)…",
         no_db = "Kamus Word Wise tidak ditemukan.\nTempatkan kamus (*.db) di:\n",
         toggle = "Alihkan petunjuk Word Wise",
         show_inline = "Tampilkan petunjuk sebaris",
@@ -380,7 +352,6 @@ return {
     },
     ie = {
         know = "Yo ja conosse ti parol", show = "Monstrar li indicie Word Wise",
-        building = "Construction del dictionarium Word Wise ex li data de ti Kindle (un sol vez)…",
         no_db = "Null dictionarium Word Wise trovat.\nPosi un dictionarium (*.db) in:\n",
         toggle = "Comutar li indicies de Word Wise",
         show_inline = "Monstrar indicies in linea",
@@ -393,7 +364,6 @@ return {
     },
     it_IT = {
         know = "Conosco già questa parola", show = "Mostra suggerimento Word Wise",
-        building = "Creazione del dizionario Word Wise dai dati di questo Kindle (una tantum)…",
         no_db = "Nessun dizionario Word Wise trovato.\nInserisci un dizionario (*.db) in:\n",
         toggle = "Attiva/disattiva i suggerimenti Word Wise",
         show_inline = "Mostra suggerimenti in linea",
@@ -406,7 +376,6 @@ return {
     },
     ja = {
         know = "この単語はもう知っています", show = "Word Wise のヒントを表示",
-        building = "この Kindle のデータから Word Wise 辞書を作成しています（初回のみ）…",
         no_db = "Word Wise 辞書が見つかりません。\n辞書 (*.db) を次の場所に配置してください：\n",
         toggle = "Word Wise のヒントを切り替え",
         show_inline = "インラインヒントを表示",
@@ -419,7 +388,6 @@ return {
     },
     ka = {
         know = "ამ სიტყვას უკვე ვიცნობ", show = "Word Wise-ის მინიშნების ჩვენება",
-        building = "მიმდინარეობს Word Wise ლექსიკონის შექმნა ამ Kindle-ის მონაცემებიდან (ერთხელ)…",
         no_db = "Word Wise ლექსიკონი ვერ მოიძებნა.\nმოათავსეთ ლექსიკონი (*.db) აქ:\n",
         toggle = "Word Wise მინიშნებების გადართვა",
         show_inline = "ხაზშივე მინიშნებების ჩვენება",
@@ -432,7 +400,6 @@ return {
     },
     kab = {
         know = "Ssneɣ yakan awal-a", show = "Sken talɣut Word Wise",
-        building = "Alay n usegzawal Word Wise seg isefka n Kindle-a (yiwet n tikkelt)…",
         no_db = "Ulac asegzawal Word Wise yettwafen.\nSers asegzawal (*.db) deg:\n",
         toggle = "Rmed/Sens tilɣa Word Wise",
         show_inline = "Sken tilɣa srid",
@@ -445,7 +412,6 @@ return {
     },
     kn = {
         know = "ಈ ಪದ ನನಗೆ ಈಗಾಗಲೇ ತಿಳಿದಿದೆ", show = "Word Wise ಸುಳಿವು ತೋರಿಸಿ",
-        building = "ಈ Kindle ನ ಡೇಟಾದಿಂದ Word Wise ನಿಘಂಟನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ (ಒಮ್ಮೆ ಮಾತ್ರ)…",
         no_db = "Word Wise ನಿಘಂಟು ಕಂಡುಬಂದಿಲ್ಲ.\nಒಂದು ನಿಘಂಟನ್ನು (*.db) ಇಲ್ಲಿ ಇರಿಸಿ:\n",
         toggle = "Word Wise ಸುಳಿವುಗಳನ್ನು ಟಾಗಲ್ ಮಾಡಿ",
         show_inline = "ಇನ್‌ಲೈನ್ ಸುಳಿವುಗಳನ್ನು ತೋರಿಸಿ",
@@ -458,7 +424,6 @@ return {
     },
     ko_KR = {
         know = "이 단어를 이미 알고 있습니다", show = "Word Wise 힌트 표시",
-        building = "이 Kindle의 데이터로 Word Wise 사전을 생성하는 중입니다(최초 1회)…",
         no_db = "Word Wise 사전을 찾을 수 없습니다.\n사전 (*.db) 을 다음 위치에 넣으세요:\n",
         toggle = "Word Wise 힌트 켜기/끄기",
         show_inline = "인라인 힌트 표시",
@@ -471,7 +436,6 @@ return {
     },
     lt_LT = {
         know = "Šį žodį jau žinau", show = "Rodyti Word Wise patarimą",
-        building = "Kuriamas Word Wise žodynas iš šio „Kindle“ duomenų (vienkartinis)…",
         no_db = "Word Wise žodynas nerastas.\nĮdėkite žodyną (*.db) į:\n",
         toggle = "Įjungti ar išjungti Word Wise patarimus",
         show_inline = "Rodyti patarimus tekste",
@@ -484,7 +448,6 @@ return {
     },
     lv = {
         know = "Es jau zinu šo vārdu", show = "Rādīt Word Wise padomu",
-        building = "Tiek veidota Word Wise vārdnīca no šī Kindle datiem (vienreizēja)…",
         no_db = "Word Wise vārdnīca nav atrasta.\nIevietojiet vārdnīcu (*.db) mapē:\n",
         toggle = "Ieslēgt vai izslēgt Word Wise padomus",
         show_inline = "Rādīt padomus tekstā",
@@ -497,7 +460,6 @@ return {
     },
     mk = {
         know = "Веќе го знам овој збор", show = "Прикажи совет Word Wise",
-        building = "Создавање на речник Word Wise од податоците на овој Kindle (еднократно)…",
         no_db = "Не е пронајден речник Word Wise.\nСтавете речник (*.db) во:\n",
         toggle = "Вклучи/исклучи совети Word Wise",
         show_inline = "Прикажи совети во текстот",
@@ -510,7 +472,6 @@ return {
     },
     ms = {
         know = "Saya sudah tahu perkataan ini", show = "Tunjukkan petua Word Wise",
-        building = "Membina kamus Word Wise daripada data Kindle ini (sekali sahaja)…",
         no_db = "Tiada kamus Word Wise ditemui.\nLetakkan kamus (*.db) di:\n",
         toggle = "Togol petua Word Wise",
         show_inline = "Tunjukkan petua sebaris",
@@ -523,7 +484,6 @@ return {
     },
     nb_NO = {
         know = "Jeg kan allerede dette ordet", show = "Vis Word Wise-hint",
-        building = "Word Wise-ordbok bygges fra denne Kindle-enhetens data (én gang)…",
         no_db = "Fant ingen Word Wise-ordbok.\nPlasser en ordbok (*.db) i:\n",
         toggle = "Slå Word Wise-hint av/på",
         show_inline = "Vis innebygde hint",
@@ -536,7 +496,6 @@ return {
     },
     nl_NL = {
         know = "Ik ken dit woord al", show = "Word Wise-hint tonen",
-        building = "Word Wise-woordenboek wordt opgebouwd uit de gegevens van deze Kindle (eenmalig)…",
         no_db = "Geen Word Wise-woordenboek gevonden.\nPlaats een woordenboek (*.db) in:\n",
         toggle = "Word Wise-hints in-/uitschakelen",
         show_inline = "Inline-hints tonen",
@@ -549,7 +508,6 @@ return {
     },
     ["or"] = {
         know = "ମୁଁ ଏହି ଶବ୍ଦ ପୂର୍ବରୁ ଜାଣେ", show = "Word Wise ସୂଚନା ଦେଖାନ୍ତୁ",
-        building = "ଏହି Kindle ର ତଥ୍ୟରୁ Word Wise ଅଭିଧାନ ପ୍ରସ୍ତୁତ କରାଯାଉଛି (ଥରେ)…",
         no_db = "କୌଣସି Word Wise ଅଭିଧାନ ମିଳିଲା ନାହିଁ।\nଏଠାରେ ଏକ ଅଭିଧାନ (*.db) ରଖନ୍ତୁ:\n",
         toggle = "Word Wise ସୂଚନା ଟୋଗଲ୍ କରନ୍ତୁ",
         show_inline = "ଇନ୍‌ଲାଇନ୍ ସୂଚନା ଦେଖାନ୍ତୁ",
@@ -562,7 +520,6 @@ return {
     },
     pl = {
         know = "Znam już to słowo", show = "Pokaż wskazówkę Word Wise",
-        building = "Tworzenie słownika Word Wise z danych tego Kindle (jednorazowo)…",
         no_db = "Nie znaleziono słownika Word Wise.\nUmieść słownik (*.db) w:\n",
         toggle = "Przełącz wskazówki Word Wise",
         show_inline = "Pokaż wskazówki w tekście",
@@ -575,7 +532,6 @@ return {
     },
     pt_BR = {
         know = "Já conheço esta palavra", show = "Mostrar dica do Word Wise",
-        building = "Criando o dicionário do Word Wise com os dados deste Kindle (apenas uma vez)…",
         no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque um dicionário (*.db) em:\n",
         toggle = "Ativar ou desativar as dicas do Word Wise",
         show_inline = "Mostrar dicas embutidas",
@@ -588,7 +544,6 @@ return {
     },
     pt_PT = {
         know = "Já conheço esta palavra", show = "Mostrar sugestão do Word Wise",
-        building = "A criar o dicionário do Word Wise com os dados deste Kindle (apenas uma vez)…",
         no_db = "Nenhum dicionário do Word Wise encontrado.\nColoque um dicionário (*.db) em:\n",
         toggle = "Ativar ou desativar as sugestões do Word Wise",
         show_inline = "Mostrar sugestões incorporadas",
@@ -601,7 +556,6 @@ return {
     },
     ro = {
         know = "Știu deja acest cuvânt", show = "Afișează indiciul Word Wise",
-        building = "Se creează dicționarul Word Wise din datele acestui Kindle (o singură dată)…",
         no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați un dicționar (*.db) în:\n",
         toggle = "Activează/dezactivează indiciile Word Wise",
         show_inline = "Afișează indiciile în text",
@@ -614,7 +568,6 @@ return {
     },
     ro_MD = {
         know = "Știu deja acest cuvânt", show = "Afișează indiciul Word Wise",
-        building = "Se creează dicționarul Word Wise din datele acestui Kindle (o singură dată)…",
         no_db = "Nu s-a găsit niciun dicționar Word Wise.\nPlasați un dicționar (*.db) în:\n",
         toggle = "Activează/dezactivează indiciile Word Wise",
         show_inline = "Afișează indiciile în text",
@@ -627,7 +580,6 @@ return {
     },
     ru = {
         know = "Я уже знаю это слово", show = "Показать подсказку Word Wise",
-        building = "Создание словаря Word Wise из данных этого Kindle (один раз)…",
         no_db = "Словарь Word Wise не найден.\nПоместите словарь (*.db) в:\n",
         toggle = "Переключить подсказки Word Wise",
         show_inline = "Показывать подсказки в тексте",
@@ -640,7 +592,6 @@ return {
     },
     si = {
         know = "මම මේ වචනය දැනටමත් දනිමි", show = "Word Wise ඉඟිය පෙන්වන්න",
-        building = "මෙම Kindle හි දත්ත වලින් Word Wise ශබ්දකෝෂය සාදමින් පවතී (එක් වරක්)…",
         no_db = "Word Wise ශබ්දකෝෂයක් හමු නොවීය.\nශබ්දකෝෂයක් (*.db) මෙහි තබන්න:\n",
         toggle = "Word Wise ඉඟි ටොගල් කරන්න",
         show_inline = "අන්තර්ගත ඉඟි පෙන්වන්න",
@@ -653,7 +604,6 @@ return {
     },
     sk = {
         know = "Toto slovo už poznám", show = "Zobraziť pomôcku Word Wise",
-        building = "Vytváranie slovníka Word Wise z údajov tohto Kindlu (jednorazovo)…",
         no_db = "Slovník Word Wise sa nenašiel.\nUmiestnite slovník (*.db) do:\n",
         toggle = "Prepnúť pomôcky Word Wise",
         show_inline = "Zobraziť pomôcky v texte",
@@ -666,7 +616,6 @@ return {
     },
     sl = {
         know = "To besedo že poznam", show = "Pokaži namig Word Wise",
-        building = "Ustvarjanje slovarja Word Wise iz podatkov te naprave Kindle (enkratno)…",
         no_db = "Slovarja Word Wise ni mogoče najti.\nSlovar (*.db) namestite v:\n",
         toggle = "Preklopi namige Word Wise",
         show_inline = "Pokaži namige v besedilu",
@@ -679,7 +628,6 @@ return {
     },
     sr = {
         know = "Већ знам ову реч", show = "Прикажи Word Wise савет",
-        building = "Прављење Word Wise речника из података овог Kindle уређаја (једнократно)…",
         no_db = "Word Wise речник није пронађен.\nПоставите речник (*.db) у:\n",
         toggle = "Укључи/искључи Word Wise савете",
         show_inline = "Прикажи савете у тексту",
@@ -692,7 +640,6 @@ return {
     },
     sv = {
         know = "Jag kan redan det här ordet", show = "Visa Word Wise-tips",
-        building = "Word Wise-ordlista byggs från den här Kindle-enhetens data (en gång)…",
         no_db = "Ingen Word Wise-ordlista hittades.\nPlacera en ordlista (*.db) i:\n",
         toggle = "Växla Word Wise-tips",
         show_inline = "Visa infogade tips",
@@ -705,7 +652,6 @@ return {
     },
     th = {
         know = "ฉันรู้จักคำนี้แล้ว", show = "แสดงคำใบ้ Word Wise",
-        building = "กำลังสร้างพจนานุกรม Word Wise จากข้อมูลของ Kindle เครื่องนี้ (ครั้งเดียว)…",
         no_db = "ไม่พบพจนานุกรม Word Wise\nวางพจนานุกรม (*.db) ไว้ใน:\n",
         toggle = "สลับคำใบ้ Word Wise",
         show_inline = "แสดงคำใบ้แบบอินไลน์",
@@ -718,7 +664,6 @@ return {
     },
     tr = {
         know = "Bu kelimeyi zaten biliyorum", show = "Word Wise ipucunu göster",
-        building = "Word Wise sözlüğü bu Kindle'ın verilerinden oluşturuluyor (bir kez)…",
         no_db = "Word Wise sözlüğü bulunamadı.\nŞu konuma bir sözlük (*.db) yerleştirin:\n",
         toggle = "Word Wise ipuçlarını aç/kapat",
         show_inline = "Satır içi ipuçlarını göster",
@@ -731,7 +676,6 @@ return {
     },
     uk = {
         know = "Я вже знаю це слово", show = "Показати підказку Word Wise",
-        building = "Створення словника Word Wise з даних цього Kindle (одноразово)…",
         no_db = "Словник Word Wise не знайдено.\nРозмістіть словник (*.db) у:\n",
         toggle = "Перемкнути підказки Word Wise",
         show_inline = "Показувати підказки в тексті",
@@ -744,7 +688,6 @@ return {
     },
     ur = {
         know = "میں یہ لفظ پہلے سے جانتا ہوں", show = "Word Wise اشارہ دکھائیں",
-        building = "اس Kindle کے ڈیٹا سے Word Wise لغت بنائی جا رہی ہے (ایک بار)…",
         no_db = "کوئی Word Wise لغت نہیں ملی۔\nایک لغت (*.db) یہاں رکھیں:\n",
         toggle = "Word Wise اشارے ٹوگل کریں",
         show_inline = "ان لائن اشارے دکھائیں",
@@ -757,7 +700,6 @@ return {
     },
     vi = {
         know = "Tôi đã biết từ này", show = "Hiển thị gợi ý Word Wise",
-        building = "Đang tạo từ điển Word Wise từ dữ liệu của Kindle này (một lần)…",
         no_db = "Không tìm thấy từ điển Word Wise.\nĐặt một từ điển (*.db) vào:\n",
         toggle = "Bật/tắt gợi ý Word Wise",
         show_inline = "Hiển thị gợi ý nội tuyến",
@@ -770,7 +712,6 @@ return {
     },
     zh_CN = {
         know = "我已经认识这个词", show = "显示 Word Wise 提示",
-        building = "正在根据此 Kindle 的数据构建 Word Wise 词典（仅需一次）…",
         no_db = "未找到 Word Wise 词典。\n请将词典 (*.db) 放入：\n",
         toggle = "切换 Word Wise 提示",
         show_inline = "显示行内提示",
@@ -783,7 +724,6 @@ return {
     },
     zh_TW = {
         know = "我已經認識這個詞", show = "顯示 Word Wise 提示",
-        building = "正在根據此 Kindle 的資料建立 Word Wise 詞典（僅需一次）…",
         no_db = "找不到 Word Wise 詞典。\n請將詞典 (*.db) 放入：\n",
         toggle = "切換 Word Wise 提示",
         show_inline = "顯示行內提示",
