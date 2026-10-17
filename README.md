@@ -41,13 +41,17 @@ There is exactly one location: `wordwise.db` inside the plugin folder
 
 ```sql
 CREATE TABLE entries (
-    word       TEXT PRIMARY KEY COLLATE NOCASE,
+    word       TEXT PRIMARY KEY COLLATE NOCASE,   -- lemma (base form)
     short_def  TEXT NOT NULL,      -- the gloss shown above the word
     difficulty INTEGER NOT NULL,   -- 1 rarest .. 5 most common
     pos        TEXT                -- part of speech (optional)
 );
+CREATE TABLE forms (
+    form  TEXT PRIMARY KEY COLLATE NOCASE,   -- a spelling as it appears in books
+    lemma TEXT NOT NULL                      -- the entries.word it belongs to
+);
 ```
 
-A word is glossed when `difficulty <= hint level`. Lookups fall back to a few
-cheap English de-inflections (plurals, `-ed`, `-ing`, `-ly`) so inflected forms
-in the text still match base-form entries.
+A word is glossed when `difficulty <= hint level`. Every word in the book is
+looked up exactly in `forms`, which must list each lemma itself as well as its
+inflections (`crept` → `creep`); the plugin does no de-inflection of its own.

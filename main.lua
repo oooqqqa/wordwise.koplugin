@@ -133,7 +133,7 @@ end
 
 -- The lemma this dictionary popup is looking at, if it is a word Word Wise
 -- knows (so the "already know" button only appears for glossed words). Returns
--- the de-inflected lemma, matching how hints are keyed.
+-- the lemma, matching how hints are keyed.
 function WordWise:dictLemmaFor(dict_popup)
     if not (dict_popup and dict_popup.word) then return nil end
     local key = dict_popup.word:gsub("[^%a]", "")

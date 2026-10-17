@@ -5,17 +5,23 @@
 -- wordwise.db inside the plugin folder (main.lua decides the path).
 --
 -- Canonical schema:
---   entries(word TEXT PRIMARY KEY COLLATE NOCASE,
+--   entries(word TEXT PRIMARY KEY COLLATE NOCASE,   -- lemma (base form)
 --           short_def TEXT NOT NULL,
 --           difficulty INTEGER NOT NULL,   -- 1 rarest .. 5 most common
 --           pos TEXT)
+--   forms(form TEXT PRIMARY KEY COLLATE NOCASE,     -- every spelling to look up,
+--         lemma TEXT NOT NULL)                      -- the lemma itself included
+--
+-- Book words are looked up exactly in forms; the database decides which
+-- inflections belong to which lemma, so the plugin never guesses.
 --
 -- A word is glossed when its difficulty <= the user's hint level, so a low
 -- hint level shows only rare/hard words and a high one also shows common ones.
 local SQ3 = require("lua-ljsqlite3/init")
 local logger = require("logger")
 
-local LOOKUP_SQL = "SELECT short_def, difficulty FROM entries WHERE word = ?1 LIMIT 1;"
+local LOOKUP_SQL = "SELECT e.short_def, e.difficulty, e.word FROM forms f "
+    .. "JOIN entries e ON e.word = f.lemma WHERE f.form = ?1 LIMIT 1;"
 
 local WordWiseDB = {}
 WordWiseDB.__index = WordWiseDB
@@ -26,56 +32,6 @@ local function shorten(def)
     def = def:gsub("^%s+", ""):gsub("%s+$", "")
     if def == "" then return nil end
     return def
-end
-
--- Common nouns/adjectives that happen to end in a stripped suffix but are NOT
--- inflected forms of something else -- de-inflecting them risks landing on an
--- unrelated real dictionary word (e.g. morning -> morn, an archaic word that
--- happens to be defined as "morning", making morning look like it defines
--- itself; passing -> passe, an unrelated word meaning "no longer fashionable").
--- Over-generation is normally harmless since candidates must resolve to a real
--- entry, but these specific collisions are real entries, so it isn't.
-local NO_DEINFLECT = {
-    morning = true, evening = true, passing = true,
-}
-
--- The dictionary is keyed by lemma (base form). Book text carries inflected
--- forms, so on a miss we try a few cheap English de-inflections. Order matters:
--- more specific rules first. Candidates are only accepted if they resolve to a
--- real entry, so over-generation is normally harmless (see NO_DEINFLECT above
--- for the exceptions).
-local function candidates(w)
-    if NO_DEINFLECT[w] then return { w } end
-    local out = { w }
-    local n = #w
-    local function add(s) if s and #s >= 3 then out[#out + 1] = s end end
-    if n >= 5 and w:sub(-3) == "ies" then
-        add(w:sub(1, n - 3) .. "y")            -- studies -> study
-    end
-    if n >= 5 and w:sub(-2) == "es" then
-        add(w:sub(1, n - 2))                   -- boxes -> box
-    end
-    if n >= 4 and w:sub(-1) == "s" then
-        add(w:sub(1, n - 1))                   -- traditions -> tradition
-    end
-    if n >= 5 and w:sub(-2) == "ly" then
-        add(w:sub(1, n - 2))                   -- splendidly -> splendid
-    end
-    if n >= 5 and w:sub(-2) == "ed" then
-        add(w:sub(1, n - 1))                   -- glimpsed -> glimpse
-        add(w:sub(1, n - 2))                   -- walked -> walk
-        if w:sub(n - 2, n - 2) == w:sub(n - 3, n - 3) then
-            add(w:sub(1, n - 3))               -- stopped -> stop
-        end
-    end
-    if n >= 6 and w:sub(-3) == "ing" then
-        add(w:sub(1, n - 3))                   -- hurrying -> hurry, going -> go
-        add(w:sub(1, n - 3) .. "e")            -- making -> make
-        if w:sub(n - 3, n - 3) == w:sub(n - 4, n - 4) then
-            add(w:sub(1, n - 4))               -- running -> run
-        end
-    end
-    return out
 end
 
 function WordWiseDB.open(path)
@@ -95,7 +51,7 @@ function WordWiseDB.open(path)
     return self
 end
 
--- One raw lookup of an exact key. Returns {gloss, difficulty} or nil.
+-- One exact lookup in forms. Returns {gloss, difficulty, key} or nil.
 function WordWiseDB:_query(key)
     local result = nil
     local ok, err = pcall(function()
@@ -106,9 +62,8 @@ function WordWiseDB:_query(key)
             local gloss = shorten(row[1])
             local difficulty = tonumber(row[2])
             if gloss and difficulty then
-                -- key is the lemma that actually matched (a de-inflected
-                -- candidate), so callers can suppress every surface form of it.
-                result = { gloss = gloss, difficulty = difficulty, key = key }
+                -- key is the lemma, so callers can suppress every form of it.
+                result = { gloss = gloss, difficulty = difficulty, key = row[3] }
             end
         end
         self.stmt:clearbind():reset()
@@ -119,19 +74,15 @@ function WordWiseDB:_query(key)
     return result
 end
 
--- Return { gloss = <string>, difficulty = <int> } or nil. Cached per surface
--- word (including negative results). Tries the word, then de-inflected forms.
+-- Return { gloss = <string>, difficulty = <int>, key = <lemma> } or nil.
+-- Cached per surface word (including negative results).
 function WordWiseDB:lookup(word)
     local key = word:lower()
     local cached = self.cache[key]
     if cached ~= nil then
         return cached or nil
     end
-    local result = nil
-    for _, cand in ipairs(candidates(key)) do
-        result = self:_query(cand)
-        if result then break end
-    end
+    local result = self:_query(key)
     self.cache[key] = result or false
     return result
 end
