@@ -5,7 +5,10 @@ painted as a per-page overlay on the book you're reading (no copy, no file
 rewrite). Difficulty is adjustable: a low hint level shows only rare/hard words,
 a high one also glosses more common ones.
 
-![Word Wise showing glosses above difficult words](screenshot.png)
+![Word Wise showing Chinese glosses above difficult words in The Adventures of Sherlock Holmes](screenshot.png)
+
+*The Adventures of Sherlock Holmes on a Boox Leaf5, hint level 3, with an
+English–Chinese `wordwise.db`.*
 
 ## Install
 
