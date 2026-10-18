@@ -55,3 +55,6 @@ CREATE TABLE forms (
 A word is glossed when `difficulty <= hint level`. Every word in the book is
 looked up exactly in `forms`, which must list each lemma itself as well as its
 inflections (`crept` → `creep`); the plugin does no de-inflection of its own.
+Keys are lower-cased and at least three letters long; words with letters
+outside A–Z (`naïve`, `coupé`) are skipped rather than looked up without
+their accents.

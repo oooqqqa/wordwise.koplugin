@@ -74,10 +74,21 @@ function WordWiseDB:_query(key)
     return result
 end
 
--- Return { gloss = <string>, difficulty = <int>, key = <lemma> } or nil.
--- Cached per surface word (including negative results).
-function WordWiseDB:lookup(word)
+-- The forms key for a book word, or nil. crengine hands over words already
+-- split at spaces, punctuation, apostrophes and hyphens (one’s -> one, s), so
+-- a word that is not plain ASCII letters has an accent in it (naïve, coupé):
+-- skip it, since dropping the accent looks up another word (nave, coup).
+function WordWiseDB.keyFor(word)
     local key = word:lower()
+    if #key >= 3 and key:match("^%a+$") then return key end
+    return nil
+end
+
+-- Return { gloss = <string>, difficulty = <int>, key = <lemma> } or nil.
+-- Cached per key (including negative results).
+function WordWiseDB:lookup(word)
+    local key = WordWiseDB.keyFor(word)
+    if not key then return nil end
     local cached = self.cache[key]
     if cached ~= nil then
         return cached or nil

@@ -136,11 +136,9 @@ end
 -- the lemma, matching how hints are keyed.
 function WordWise:dictLemmaFor(dict_popup)
     if not (dict_popup and dict_popup.word) then return nil end
-    local key = dict_popup.word:gsub("[^%a]", "")
-    if #key < 3 then return nil end
     local db = self:getDB()
     if not db then return nil end
-    local entry = db:lookup(key)
+    local entry = db:lookup(dict_popup.word)
     return entry and entry.key or nil
 end
 
@@ -329,23 +327,20 @@ function WordWise:computePageHints()
         last_xp = end_xp
         local word = doc:getTextFromXPointers(xp, end_xp)
         if word then
-            local key = word:gsub("[^%a]", "")
-            if #key >= 3 then
-                local entry = db:lookup(key)
-                -- difficulty 1 = rarest .. 5 = common; show up to the hint level,
-                -- and never for words the user has marked as already known.
-                if entry and entry.difficulty <= level and not self:isWordKnown(entry.key) then
-                    local boxes = doc:getScreenBoxesFromPositions(xp, end_xp, true)
-                    -- Use the FIRST line-segment: a word hyphenated across two
-                    -- lines otherwise yields a tall multi-line bounding box and
-                    -- the gloss lands a line too high / off-column.
-                    local sbox = boxes and boxes[1]
-                    if sbox and sbox.w > 0 and sbox.h > 0 then
-                        self.hints[#self.hints + 1] = {
-                            text = entry.gloss, box = sbox,
-                            difficulty = entry.difficulty,
-                        }
-                    end
+            local entry = db:lookup(word)
+            -- difficulty 1 = rarest .. 5 = common; show up to the hint level,
+            -- and never for words the user has marked as already known.
+            if entry and entry.difficulty <= level and not self:isWordKnown(entry.key) then
+                local boxes = doc:getScreenBoxesFromPositions(xp, end_xp, true)
+                -- Use the FIRST line-segment: a word hyphenated across two
+                -- lines otherwise yields a tall multi-line bounding box and
+                -- the gloss lands a line too high / off-column.
+                local sbox = boxes and boxes[1]
+                if sbox and sbox.w > 0 and sbox.h > 0 then
+                    self.hints[#self.hints + 1] = {
+                        text = entry.gloss, box = sbox,
+                        difficulty = entry.difficulty,
+                    }
                 end
             end
         end
